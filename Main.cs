@@ -14,6 +14,8 @@ namespace Automated_help_system_for_a_computer_game_store
 {
     public partial class Main : Form
     {
+        public static Helper helper = new Helper();
+
         public static Main main;
         public static Sales sales = new Sales();
         public static Products products = new Products();

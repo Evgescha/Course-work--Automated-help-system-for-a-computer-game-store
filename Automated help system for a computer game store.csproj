@@ -63,6 +63,7 @@
     <Compile Include="Genres.Designer.cs">
       <DependentUpon>Genres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

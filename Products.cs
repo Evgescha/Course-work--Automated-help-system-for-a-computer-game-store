@@ -48,5 +48,10 @@ namespace Automated_help_system_for_a_computer_game_store
             this.productsTableAdapter.Fill(this.databaseDataSet.Products);
 
         }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = Main.helper.isNumberOrControlChar(e);
+        }
     }
 }

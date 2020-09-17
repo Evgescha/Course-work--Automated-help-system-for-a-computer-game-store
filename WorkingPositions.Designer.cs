@@ -69,6 +69,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(279, 178);
             this.dataGridView1.TabIndex = 37;
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // кодDataGridViewTextBoxColumn
             // 
@@ -156,6 +157,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(158, 20);
             this.textBox2.TabIndex = 39;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label1
             // 

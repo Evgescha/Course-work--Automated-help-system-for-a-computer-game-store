@@ -49,6 +49,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.publisherBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -56,7 +57,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.productsTableAdapter = new Automated_help_system_for_a_computer_game_store.DatabaseDataSetTableAdapters.ProductsTableAdapter();
-            this.publisherBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.publisherTableAdapter = new Automated_help_system_for_a_computer_game_store.DatabaseDataSetTableAdapters.PublisherTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
@@ -184,6 +184,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(159, 20);
             this.textBox2.TabIndex = 25;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label5
             // 
@@ -231,6 +232,11 @@
             this.comboBox1.TabIndex = 17;
             this.comboBox1.ValueMember = "Название";
             // 
+            // publisherBindingSource
+            // 
+            this.publisherBindingSource.DataMember = "Publisher";
+            this.publisherBindingSource.DataSource = this.databaseDataSet;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -246,6 +252,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(158, 20);
             this.textBox3.TabIndex = 30;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // textBox4
             // 
@@ -253,6 +260,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(158, 20);
             this.textBox4.TabIndex = 31;
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label6
             // 
@@ -283,11 +291,6 @@
             // productsTableAdapter
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
-            // 
-            // publisherBindingSource
-            // 
-            this.publisherBindingSource.DataMember = "Publisher";
-            this.publisherBindingSource.DataSource = this.databaseDataSet;
             // 
             // publisherTableAdapter
             // 
