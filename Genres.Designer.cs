@@ -63,6 +63,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(221, 133);
             this.dataGridView1.TabIndex = 25;
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // названиеDataGridViewTextBoxColumn
             // 
