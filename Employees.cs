@@ -16,6 +16,12 @@ namespace Automated_help_system_for_a_computer_game_store
         {
             InitializeComponent();
         }
+        private void Employees_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main.employees.Hide();
+            Main.main.Show();
+            e.Cancel = true;
+        }
         //add
         private void button1_Click(object sender, EventArgs e)
         {
@@ -32,11 +38,5 @@ namespace Automated_help_system_for_a_computer_game_store
 
         }
 
-        private void Employees_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Main.employees.Hide();
-            Main.main.Show();
-            e.Cancel = true;
-        }
     }
 }
