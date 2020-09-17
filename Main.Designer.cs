@@ -35,12 +35,11 @@
             this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.проданныеТоварыПоДатеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.проданныеТоварыПоСотрудникуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сотрудникиПоДолжностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.должностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.жанрыИгрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изданияИгрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,13 +76,13 @@
             this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
             this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
+            this.сотрудникиToolStripMenuItem.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem_Click);
             // 
             // отчётыToolStripMenuItem
             // 
             this.отчётыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.проданныеТоварыПоДатеToolStripMenuItem,
-            this.проданныеТоварыПоСотрудникуToolStripMenuItem,
-            this.сотрудникиПоДолжностиToolStripMenuItem});
+            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem});
             this.отчётыToolStripMenuItem.Name = "отчётыToolStripMenuItem";
             this.отчётыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.отчётыToolStripMenuItem.Text = "Отчёты";
@@ -91,20 +90,8 @@
             // проданныеТоварыПоДатеToolStripMenuItem
             // 
             this.проданныеТоварыПоДатеToolStripMenuItem.Name = "проданныеТоварыПоДатеToolStripMenuItem";
-            this.проданныеТоварыПоДатеToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
-            this.проданныеТоварыПоДатеToolStripMenuItem.Text = "Проданные товары по дате";
-            // 
-            // проданныеТоварыПоСотрудникуToolStripMenuItem
-            // 
-            this.проданныеТоварыПоСотрудникуToolStripMenuItem.Name = "проданныеТоварыПоСотрудникуToolStripMenuItem";
-            this.проданныеТоварыПоСотрудникуToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
-            this.проданныеТоварыПоСотрудникуToolStripMenuItem.Text = "Проданные товары по сотруднику";
-            // 
-            // сотрудникиПоДолжностиToolStripMenuItem
-            // 
-            this.сотрудникиПоДолжностиToolStripMenuItem.Name = "сотрудникиПоДолжностиToolStripMenuItem";
-            this.сотрудникиПоДолжностиToolStripMenuItem.Size = new System.Drawing.Size(264, 22);
-            this.сотрудникиПоДолжностиToolStripMenuItem.Text = "Сотрудники по должности";
+            this.проданныеТоварыПоДатеToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
+            this.проданныеТоварыПоДатеToolStripMenuItem.Text = "Проданные товары по критериям";
             // 
             // справочникиToolStripMenuItem
             // 
@@ -121,18 +108,27 @@
             this.должностиToolStripMenuItem.Name = "должностиToolStripMenuItem";
             this.должностиToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.должностиToolStripMenuItem.Text = "Должности сотрудников";
+            this.должностиToolStripMenuItem.Click += new System.EventHandler(this.должностиToolStripMenuItem_Click);
             // 
             // жанрыИгрToolStripMenuItem
             // 
             this.жанрыИгрToolStripMenuItem.Name = "жанрыИгрToolStripMenuItem";
             this.жанрыИгрToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.жанрыИгрToolStripMenuItem.Text = "Жанры игр";
+            this.жанрыИгрToolStripMenuItem.Click += new System.EventHandler(this.жанрыИгрToolStripMenuItem_Click);
             // 
             // изданияИгрToolStripMenuItem
             // 
             this.изданияИгрToolStripMenuItem.Name = "изданияИгрToolStripMenuItem";
             this.изданияИгрToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.изданияИгрToolStripMenuItem.Text = "Издания игр";
+            this.изданияИгрToolStripMenuItem.Click += new System.EventHandler(this.изданияИгрToolStripMenuItem_Click);
+            // 
+            // товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem
+            // 
+            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem.Name = "товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem";
+            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
+            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem.Text = "Список товаров по критериям";
             // 
             // Main
             // 
@@ -161,12 +157,11 @@
         private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчётыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem проданныеТоварыПоДатеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem проданныеТоварыПоСотрудникуToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сотрудникиПоДолжностиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem должностиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem жанрыИгрToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изданияИгрToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem;
     }
 }
 
