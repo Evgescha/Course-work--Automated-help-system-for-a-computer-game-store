@@ -23,5 +23,20 @@ namespace Automated_help_system_for_a_computer_game_store
             Main.main.Show();
             e.Cancel = true;
         }
+        //add
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+        //update
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+        //delete
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
