@@ -16,7 +16,7 @@ namespace Automated_help_system_for_a_computer_game_store
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Main());
         }
     }
 }

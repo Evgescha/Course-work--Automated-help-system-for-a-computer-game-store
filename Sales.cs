@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Automated_help_system_for_a_computer_game_store
 {
-    public partial class Form1 : Form
+    public partial class Sales : Form
     {
-        public Form1()
+        public Sales()
         {
             InitializeComponent();
+        }
+
+        private void Sales_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Main.sales.Hide();
+            Main.main.Show();
+            e.Cancel = true;
         }
     }
 }
