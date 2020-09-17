@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new Automated_help_system_for_a_computer_game_store.DatabaseDataSet();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -43,7 +47,21 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.сотрудникDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.товарDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаПродажиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.суммаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salesTableAdapter = new Automated_help_system_for_a_computer_game_store.DatabaseDataSetTableAdapters.SalesTableAdapter();
+            this.employeesTableAdapter = new Automated_help_system_for_a_computer_game_store.DatabaseDataSetTableAdapters.EmployeesTableAdapter();
+            this.productsTableAdapter = new Automated_help_system_for_a_computer_game_store.DatabaseDataSetTableAdapters.ProductsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,19 +75,42 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.employeesBindingSource;
+            this.comboBox1.DisplayMember = "ФИО";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(16, 29);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(158, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.ValueMember = "Код";
+            // 
+            // employeesBindingSource
+            // 
+            this.employeesBindingSource.DataMember = "Employees";
+            this.employeesBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "DatabaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBox2
             // 
+            this.comboBox2.DataSource = this.productsBindingSource;
+            this.comboBox2.DisplayMember = "Название";
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(16, 79);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(158, 21);
             this.comboBox2.TabIndex = 3;
+            this.comboBox2.ValueMember = "Код";
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.databaseDataSet;
             // 
             // label2
             // 
@@ -161,14 +202,92 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
+            this.сотрудникDataGridViewTextBoxColumn,
+            this.товарDataGridViewTextBoxColumn,
+            this.количествоDataGridViewTextBoxColumn,
+            this.датаПродажиDataGridViewTextBoxColumn,
+            this.суммаDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.salesBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(215, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(547, 324);
             this.dataGridView1.TabIndex = 15;
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // сотрудникDataGridViewTextBoxColumn
+            // 
+            this.сотрудникDataGridViewTextBoxColumn.DataPropertyName = "Сотрудник";
+            this.сотрудникDataGridViewTextBoxColumn.HeaderText = "Сотрудник";
+            this.сотрудникDataGridViewTextBoxColumn.Name = "сотрудникDataGridViewTextBoxColumn";
+            this.сотрудникDataGridViewTextBoxColumn.ReadOnly = true;
+            this.сотрудникDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // товарDataGridViewTextBoxColumn
+            // 
+            this.товарDataGridViewTextBoxColumn.DataPropertyName = "Товар";
+            this.товарDataGridViewTextBoxColumn.HeaderText = "Товар";
+            this.товарDataGridViewTextBoxColumn.Name = "товарDataGridViewTextBoxColumn";
+            this.товарDataGridViewTextBoxColumn.ReadOnly = true;
+            this.товарDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // количествоDataGridViewTextBoxColumn
+            // 
+            this.количествоDataGridViewTextBoxColumn.DataPropertyName = "Количество";
+            this.количествоDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.количествоDataGridViewTextBoxColumn.Name = "количествоDataGridViewTextBoxColumn";
+            this.количествоDataGridViewTextBoxColumn.ReadOnly = true;
+            this.количествоDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // датаПродажиDataGridViewTextBoxColumn
+            // 
+            this.датаПродажиDataGridViewTextBoxColumn.DataPropertyName = "Дата продажи";
+            this.датаПродажиDataGridViewTextBoxColumn.HeaderText = "Дата продажи";
+            this.датаПродажиDataGridViewTextBoxColumn.Name = "датаПродажиDataGridViewTextBoxColumn";
+            this.датаПродажиDataGridViewTextBoxColumn.ReadOnly = true;
+            this.датаПродажиDataGridViewTextBoxColumn.Width = 96;
+            // 
+            // суммаDataGridViewTextBoxColumn
+            // 
+            this.суммаDataGridViewTextBoxColumn.DataPropertyName = "Сумма";
+            this.суммаDataGridViewTextBoxColumn.HeaderText = "Сумма";
+            this.суммаDataGridViewTextBoxColumn.Name = "суммаDataGridViewTextBoxColumn";
+            this.суммаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.суммаDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // salesBindingSource
+            // 
+            this.salesBindingSource.DataMember = "Sales";
+            this.salesBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // salesTableAdapter
+            // 
+            this.salesTableAdapter.ClearBeforeFill = true;
+            // 
+            // employeesTableAdapter
+            // 
+            this.employeesTableAdapter.ClearBeforeFill = true;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
             // 
             // Sales
             // 
@@ -191,9 +310,15 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Sales";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Продажи";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Sales_FormClosing);
+            this.Load += new System.EventHandler(this.Sales_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,5 +340,18 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private DatabaseDataSet databaseDataSet;
+        private System.Windows.Forms.BindingSource salesBindingSource;
+        private DatabaseDataSetTableAdapters.SalesTableAdapter salesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn сотрудникDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn товарDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количествоDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датаПродажиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn суммаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource employeesBindingSource;
+        private DatabaseDataSetTableAdapters.EmployeesTableAdapter employeesTableAdapter;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private DatabaseDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
     }
 }

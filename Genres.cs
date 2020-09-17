@@ -38,5 +38,12 @@ namespace Automated_help_system_for_a_computer_game_store
         {
 
         }
+
+        private void Genres_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Genres". При необходимости она может быть перемещена или удалена.
+            this.genresTableAdapter.Fill(this.databaseDataSet.Genres);
+
+        }
     }
 }

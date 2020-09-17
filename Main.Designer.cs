@@ -35,11 +35,11 @@
             this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.проданныеТоварыПоДатеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.должностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.жанрыИгрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изданияИгрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.должностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,6 +93,12 @@
             this.проданныеТоварыПоДатеToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.проданныеТоварыПоДатеToolStripMenuItem.Text = "Проданные товары по критериям";
             // 
+            // товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem
+            // 
+            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem.Name = "товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem";
+            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
+            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem.Text = "Список товаров по критериям";
+            // 
             // справочникиToolStripMenuItem
             // 
             this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -102,13 +108,6 @@
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
             this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.справочникиToolStripMenuItem.Text = "Справочники";
-            // 
-            // должностиToolStripMenuItem
-            // 
-            this.должностиToolStripMenuItem.Name = "должностиToolStripMenuItem";
-            this.должностиToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.должностиToolStripMenuItem.Text = "Должности сотрудников";
-            this.должностиToolStripMenuItem.Click += new System.EventHandler(this.должностиToolStripMenuItem_Click);
             // 
             // жанрыИгрToolStripMenuItem
             // 
@@ -124,11 +123,12 @@
             this.изданияИгрToolStripMenuItem.Text = "Издания игр";
             this.изданияИгрToolStripMenuItem.Click += new System.EventHandler(this.изданияИгрToolStripMenuItem_Click);
             // 
-            // товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem
+            // должностиToolStripMenuItem
             // 
-            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem.Name = "товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem";
-            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
-            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem.Text = "Список товаров по критериям";
+            this.должностиToolStripMenuItem.Name = "должностиToolStripMenuItem";
+            this.должностиToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.должностиToolStripMenuItem.Text = "Должности сотрудников";
+            this.должностиToolStripMenuItem.Click += new System.EventHandler(this.должностиToolStripMenuItem_Click);
             // 
             // Main
             // 

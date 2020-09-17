@@ -28,8 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkingPositions));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.должностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.зарплатаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workingPositionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new Automated_help_system_for_a_computer_game_store.DatabaseDataSet();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -37,19 +43,66 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.workingPositionsTableAdapter = new Automated_help_system_for_a_computer_game_store.DatabaseDataSetTableAdapters.WorkingPositionsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workingPositionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
+            this.должностьDataGridViewTextBoxColumn,
+            this.зарплатаDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.workingPositionsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(214, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(279, 178);
             this.dataGridView1.TabIndex = 37;
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // должностьDataGridViewTextBoxColumn
+            // 
+            this.должностьDataGridViewTextBoxColumn.DataPropertyName = "Должность";
+            this.должностьDataGridViewTextBoxColumn.HeaderText = "Должность";
+            this.должностьDataGridViewTextBoxColumn.Name = "должностьDataGridViewTextBoxColumn";
+            this.должностьDataGridViewTextBoxColumn.ReadOnly = true;
+            this.должностьDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // зарплатаDataGridViewTextBoxColumn
+            // 
+            this.зарплатаDataGridViewTextBoxColumn.DataPropertyName = "Зарплата";
+            this.зарплатаDataGridViewTextBoxColumn.HeaderText = "Зарплата";
+            this.зарплатаDataGridViewTextBoxColumn.Name = "зарплатаDataGridViewTextBoxColumn";
+            this.зарплатаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.зарплатаDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // workingPositionsBindingSource
+            // 
+            this.workingPositionsBindingSource.DataMember = "WorkingPositions";
+            this.workingPositionsBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "DatabaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button3
             // 
@@ -113,6 +166,10 @@
             this.label1.TabIndex = 38;
             this.label1.Text = "Зарплата";
             // 
+            // workingPositionsTableAdapter
+            // 
+            this.workingPositionsTableAdapter.ClearBeforeFill = true;
+            // 
             // WorkingPositions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,9 +185,13 @@
             this.Controls.Add(this.label3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WorkingPositions";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Должности";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WorkingPositions_FormClosing);
+            this.Load += new System.EventHandler(this.WorkingPositions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workingPositionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +207,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
+        private DatabaseDataSet databaseDataSet;
+        private System.Windows.Forms.BindingSource workingPositionsBindingSource;
+        private DatabaseDataSetTableAdapters.WorkingPositionsTableAdapter workingPositionsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn должностьDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn зарплатаDataGridViewTextBoxColumn;
     }
 }

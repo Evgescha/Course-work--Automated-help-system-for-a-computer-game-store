@@ -38,5 +38,16 @@ namespace Automated_help_system_for_a_computer_game_store
         {
 
         }
+
+        private void Sales_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Products". При необходимости она может быть перемещена или удалена.
+            this.productsTableAdapter.Fill(this.databaseDataSet.Products);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Employees". При необходимости она может быть перемещена или удалена.
+            this.employeesTableAdapter.Fill(this.databaseDataSet.Employees);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Sales". При необходимости она может быть перемещена или удалена.
+            this.salesTableAdapter.Fill(this.databaseDataSet.Sales);
+
+        }
     }
 }

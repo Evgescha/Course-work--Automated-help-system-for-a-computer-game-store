@@ -38,5 +38,12 @@ namespace Automated_help_system_for_a_computer_game_store
         {
 
         }
+
+        private void WorkingPositions_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.WorkingPositions". При необходимости она может быть перемещена или удалена.
+            this.workingPositionsTableAdapter.Fill(this.databaseDataSet.WorkingPositions);
+
+        }
     }
 }
