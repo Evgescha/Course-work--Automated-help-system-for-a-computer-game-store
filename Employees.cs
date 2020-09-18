@@ -26,11 +26,8 @@ namespace Automated_help_system_for_a_computer_game_store
 
         private void Employees_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.WorkingPositions". При необходимости она может быть перемещена или удалена.
-            this.workingPositionsTableAdapter.Fill(this.databaseDataSet.WorkingPositions);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Employees". При необходимости она может быть перемещена или удалена.
-            this.employeesTableAdapter.Fill(this.databaseDataSet.Employees);
-            fixDataGridColumnsText();
+            updateAll();
+          
         }
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
@@ -51,7 +48,18 @@ namespace Automated_help_system_for_a_computer_game_store
         {
             RemovePost();
         }
-
+        private void button4_Click(object sender, EventArgs e)
+        {
+            updateAll();
+        }
+        private void updateAll()
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.WorkingPositions". При необходимости она может быть перемещена или удалена.
+            this.workingPositionsTableAdapter.Fill(this.databaseDataSet.WorkingPositions);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Employees". При необходимости она может быть перемещена или удалена.
+            this.employeesTableAdapter.Fill(this.databaseDataSet.Employees);
+            fixDataGridColumnsText();
+        }
         private bool isCanUpdate()
         {
             if (!isCanRemove()) return false;
@@ -161,5 +169,7 @@ namespace Automated_help_system_for_a_computer_game_store
                 dataGridView1[3, i].Value = comboBox1.Text;
             }
         }
+
+
     }
 }

@@ -26,13 +26,7 @@ namespace Automated_help_system_for_a_computer_game_store
 
         private void Sales_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Products". При необходимости она может быть перемещена или удалена.
-            this.productsTableAdapter.Fill(this.databaseDataSet.Products);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Employees". При необходимости она может быть перемещена или удалена.
-            this.employeesTableAdapter.Fill(this.databaseDataSet.Employees);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Sales". При необходимости она может быть перемещена или удалена.
-            this.salesTableAdapter.Fill(this.databaseDataSet.Sales);
-            fixDataGridColumnsText();
+            updateAll();
         }
 
         private void fixDataGridColumnsText() {
@@ -62,7 +56,20 @@ namespace Automated_help_system_for_a_computer_game_store
         {
             RemovePost();
         }
-
+        private void button4_Click(object sender, EventArgs e)
+        {
+            updateAll();
+        }
+        private void updateAll()
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Products". При необходимости она может быть перемещена или удалена.
+            this.productsTableAdapter.Fill(this.databaseDataSet.Products);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Employees". При необходимости она может быть перемещена или удалена.
+            this.employeesTableAdapter.Fill(this.databaseDataSet.Employees);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "databaseDataSet.Sales". При необходимости она может быть перемещена или удалена.
+            this.salesTableAdapter.Fill(this.databaseDataSet.Sales);
+            fixDataGridColumnsText();
+        }
         private bool isCanUpdate()
         {
             if (!isCanRemove()) return false;
@@ -168,7 +175,7 @@ namespace Automated_help_system_for_a_computer_game_store
 
         private void comboBox2_TextUpdate(object sender, EventArgs e)
         {
-            
+            if (comboBox2.SelectedValue == null) return;
             int id= productsBindingSource.Find("Код", comboBox2.SelectedValue.ToString());
             int price=(int)((DataRowView)(productsBindingSource[id]))[6];
 
@@ -183,5 +190,7 @@ namespace Automated_help_system_for_a_computer_game_store
                 textBox2.Text = price + "";
             }
         }
+
+
     }
 }
