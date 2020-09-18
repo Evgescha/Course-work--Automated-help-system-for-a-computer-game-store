@@ -171,5 +171,28 @@ namespace Automated_help_system_for_a_computer_game_store
         }
 
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked) {
+                if (textBox1.Text.Length < 1) return;
+                this.employeesTableAdapter.FillByFIO(this.databaseDataSet.Employees, $"%{textBox1.Text}%");
+            }
+            else if (radioButton2.Checked)
+            {
+                if (comboBox1.Items.Count < 1) return;
+                this.employeesTableAdapter.FillByДолжность(this.databaseDataSet.Employees, int.Parse(comboBox1.SelectedValue.ToString()));
+            }
+            else if (radioButton3.Checked)
+            {
+                if (textBox2.Text.Length < 1) return;
+                this.employeesTableAdapter.FillByАдрес(this.databaseDataSet.Employees, $"%{textBox2.Text}%");
+            }
+            else if (radioButton4.Checked)
+            {
+                if (textBox3.Text.Length < 1) return;
+                this.employeesTableAdapter.FillByТелефон(this.databaseDataSet.Employees, $"%{textBox3.Text}%");
+            }
+            fixDataGridColumnsText();
+        }
     }
 }

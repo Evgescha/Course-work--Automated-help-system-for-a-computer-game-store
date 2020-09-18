@@ -192,5 +192,43 @@ namespace Automated_help_system_for_a_computer_game_store
             if(checkedListBox1.Items.Count>0)
             checkedListBox1.SetItemChecked(0, false);
         }
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                if (textBox1.Text.Length < 1) return;
+                this.productsTableAdapter.FillByНазвание(this.databaseDataSet.Products, $"%{textBox1.Text}%");
+            }
+            else if (radioButton2.Checked)
+            {               
+                string genres = "";
+                for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
+                    genres += checkedListBox1.CheckedItems[i].ToString() + "; ";
+                this.productsTableAdapter.FillByЖанр(this.databaseDataSet.Products, $"%{genres}%");
+            }
+            else if (radioButton3.Checked)
+            {
+                if (textBox2.Text.Length < 1) return;
+                this.productsTableAdapter.FillByВозраст(this.databaseDataSet.Products, int.Parse(textBox2.Text));
+            }
+            else if (radioButton4.Checked)
+            {
+                if (textBox3.Text.Length < 1) return;
+                this.productsTableAdapter.FillByГодИзд(this.databaseDataSet.Products, int.Parse(textBox3.Text));
+            }
+            else if (radioButton5.Checked)
+            {
+                if (comboBox1.Items.Count < 1) return;
+                this.productsTableAdapter.FillByИздательство(this.databaseDataSet.Products, comboBox1.Text);
+            }
+            else if (radioButton6.Checked)
+            {
+                if (textBox4.Text.Length < 1) return;
+                this.productsTableAdapter.FillByЦена(this.databaseDataSet.Products, int.Parse(textBox4.Text));
+            }
+            updateList();
+        }
     }
 }

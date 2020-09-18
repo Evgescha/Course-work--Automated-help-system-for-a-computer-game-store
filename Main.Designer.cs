@@ -33,9 +33,6 @@
             this.продажиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.товарыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.отчётыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.проданныеТоварыПоДатеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.жанрыИгрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изданияИгрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +46,6 @@
             this.продажиToolStripMenuItem,
             this.товарыToolStripMenuItem,
             this.сотрудникиToolStripMenuItem,
-            this.отчётыToolStripMenuItem,
             this.справочникиToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -77,27 +73,6 @@
             this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
             this.сотрудникиToolStripMenuItem.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem_Click);
-            // 
-            // отчётыToolStripMenuItem
-            // 
-            this.отчётыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.проданныеТоварыПоДатеToolStripMenuItem,
-            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem});
-            this.отчётыToolStripMenuItem.Name = "отчётыToolStripMenuItem";
-            this.отчётыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.отчётыToolStripMenuItem.Text = "Отчёты";
-            // 
-            // проданныеТоварыПоДатеToolStripMenuItem
-            // 
-            this.проданныеТоварыПоДатеToolStripMenuItem.Name = "проданныеТоварыПоДатеToolStripMenuItem";
-            this.проданныеТоварыПоДатеToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
-            this.проданныеТоварыПоДатеToolStripMenuItem.Text = "Проданные товары по критериям";
-            // 
-            // товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem
-            // 
-            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem.Name = "товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem";
-            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
-            this.товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem.Text = "Список товаров по критериям";
             // 
             // справочникиToolStripMenuItem
             // 
@@ -155,13 +130,10 @@
         private System.Windows.Forms.ToolStripMenuItem продажиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem товарыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сотрудникиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem отчётыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem проданныеТоварыПоДатеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem должностиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem жанрыИгрToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изданияИгрToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem товарыПоИздательствуЦенеГодуВыпускаToolStripMenuItem;
     }
 }
 

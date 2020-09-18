@@ -191,6 +191,36 @@ namespace Automated_help_system_for_a_computer_game_store
             }
         }
 
+        
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                if (comboBox1.Items.Count < 1) return;
+                this.salesTableAdapter.FillByСотрудник(this.databaseDataSet.Sales, int.Parse(comboBox1.SelectedValue.ToString()));
+            }
+            else if (radioButton2.Checked)
+            {
+                if (comboBox2.Items.Count < 1) return;
+                this.salesTableAdapter.FillByТовару(this.databaseDataSet.Sales, int.Parse(comboBox2.SelectedValue.ToString()));
+            }
+            else if (radioButton3.Checked)
+            {
+                if (textBox1.Text.Length < 1) return;
+                this.salesTableAdapter.FillByКоличество(this.databaseDataSet.Sales, int.Parse(textBox1.Text));
+            }
+            else if (radioButton4.Checked)
+            {
+               
+                this.salesTableAdapter.FillByДата(this.databaseDataSet.Sales, dateTimePicker1.Value.AddDays(-1), dateTimePicker1.Value);
+            }
+            else if (radioButton3.Checked)
+            {
+                if (textBox2.Text.Length < 1) return;
+                this.salesTableAdapter.FillByКоличество(this.databaseDataSet.Sales, int.Parse(textBox2.Text));
+            }
+            fixDataGridColumnsText();
+        }
     }
 }
