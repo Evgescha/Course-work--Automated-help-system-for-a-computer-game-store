@@ -58,10 +58,15 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.productsTableAdapter = new Automated_help_system_for_a_computer_game_store.DatabaseDataSetTableAdapters.ProductsTableAdapter();
             this.publisherTableAdapter = new Automated_help_system_for_a_computer_game_store.DatabaseDataSetTableAdapters.PublisherTableAdapter();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.genresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.genresTableAdapter = new Automated_help_system_for_a_computer_game_store.DatabaseDataSetTableAdapters.GenresTableAdapter();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.publisherBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -72,6 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.кодDataGridViewTextBoxColumn,
@@ -85,8 +91,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(215, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(660, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(660, 458);
             this.dataGridView1.TabIndex = 29;
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // кодDataGridViewTextBoxColumn
             // 
@@ -102,6 +109,7 @@
             this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
             this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
             this.названиеDataGridViewTextBoxColumn.ReadOnly = true;
+            this.названиеDataGridViewTextBoxColumn.Width = 82;
             // 
             // жанрыDataGridViewTextBoxColumn
             // 
@@ -109,6 +117,7 @@
             this.жанрыDataGridViewTextBoxColumn.HeaderText = "Жанры";
             this.жанрыDataGridViewTextBoxColumn.Name = "жанрыDataGridViewTextBoxColumn";
             this.жанрыDataGridViewTextBoxColumn.ReadOnly = true;
+            this.жанрыDataGridViewTextBoxColumn.Width = 69;
             // 
             // возрастноеОграничениеDataGridViewTextBoxColumn
             // 
@@ -116,6 +125,7 @@
             this.возрастноеОграничениеDataGridViewTextBoxColumn.HeaderText = "Возрастное ограничение";
             this.возрастноеОграничениеDataGridViewTextBoxColumn.Name = "возрастноеОграничениеDataGridViewTextBoxColumn";
             this.возрастноеОграничениеDataGridViewTextBoxColumn.ReadOnly = true;
+            this.возрастноеОграничениеDataGridViewTextBoxColumn.Width = 145;
             // 
             // годИзданияDataGridViewTextBoxColumn
             // 
@@ -123,6 +133,7 @@
             this.годИзданияDataGridViewTextBoxColumn.HeaderText = "Год издания";
             this.годИзданияDataGridViewTextBoxColumn.Name = "годИзданияDataGridViewTextBoxColumn";
             this.годИзданияDataGridViewTextBoxColumn.ReadOnly = true;
+            this.годИзданияDataGridViewTextBoxColumn.Width = 87;
             // 
             // издательствоDataGridViewTextBoxColumn
             // 
@@ -130,6 +141,7 @@
             this.издательствоDataGridViewTextBoxColumn.HeaderText = "Издательство";
             this.издательствоDataGridViewTextBoxColumn.Name = "издательствоDataGridViewTextBoxColumn";
             this.издательствоDataGridViewTextBoxColumn.ReadOnly = true;
+            this.издательствоDataGridViewTextBoxColumn.Width = 104;
             // 
             // ценаDataGridViewTextBoxColumn
             // 
@@ -137,6 +149,7 @@
             this.ценаDataGridViewTextBoxColumn.HeaderText = "Цена";
             this.ценаDataGridViewTextBoxColumn.Name = "ценаDataGridViewTextBoxColumn";
             this.ценаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ценаDataGridViewTextBoxColumn.Width = 58;
             // 
             // productsBindingSource
             // 
@@ -296,11 +309,44 @@
             // 
             this.publisherTableAdapter.ClearBeforeFill = true;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.genresBindingSource;
+            this.comboBox2.DisplayMember = "Название";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(16, 137);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 35;
+            this.comboBox2.ValueMember = "Название";
+            this.comboBox2.Visible = false;
+            // 
+            // genresBindingSource
+            // 
+            this.genresBindingSource.DataMember = "Genres";
+            this.genresBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // genresTableAdapter
+            // 
+            this.genresTableAdapter.ClearBeforeFill = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(16, 450);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(158, 23);
+            this.button4.TabIndex = 36;
+            this.button4.Text = "Обновить";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 450);
+            this.ClientSize = new System.Drawing.Size(887, 482);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
@@ -327,6 +373,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.publisherBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genresBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,5 +409,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ценаDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource publisherBindingSource;
         private DatabaseDataSetTableAdapters.PublisherTableAdapter publisherTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.BindingSource genresBindingSource;
+        private DatabaseDataSetTableAdapters.GenresTableAdapter genresTableAdapter;
+        private System.Windows.Forms.Button button4;
     }
 }
